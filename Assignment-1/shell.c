@@ -22,7 +22,7 @@ int parse(char userInput[])
         // and not equal to end of string
         while (userInput[a] != '\0' && a < 1000)
         {
-            for (b = 0; userInput[a]!='\n' && userInput[a] != '\0' && userInput[a] != ' ' && a < 1000; a++, b++)
+            for (b = 0;userInput[a]!='\r' && userInput[a]!='\n' && userInput[a] != '\0' && userInput[a] != ' ' && a < 1000; a++, b++)
             {
                 tmp[b] = userInput[a];
             }
@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
     {
         printf("%s", prompt);
         fgets(userInput, 999, stdin);
+        printf("\b\b");
         errorCode = parse(userInput);
 
         if(errorCode ==-1){

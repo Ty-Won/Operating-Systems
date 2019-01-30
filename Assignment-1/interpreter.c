@@ -4,41 +4,43 @@
 #include "shell.h"
 #include "shellmemory.h"
 
-int script(char *words[]) {
+
+
+void help() {
+    printf("COMMAND\t\t\t\tDESCRIPTION\n"
+                   "help\t\t\t\tDisplays all the commands\n"
+                   "quit\t\t\t\tExits / terminates the shell with \"Bye\"\n"
+                   "set VAR STRING\t\t\tAssigns a value to shell memory\n"
+                   "print VAR\t\t\tPrints the STRING assigned to VA\n"
+                   "run SCRIPT.TXT\t\t\tExecutes the file SCRIPT.txt\n"
+    );
+}
+
+
+int run(char *file) {
     int errCode = 0;
     char line[1000];
-    FILE *p = fopen(words[0], "rt");
 
+    FILE *p = fopen(file, "r");
+    if (p == NULL) {
+        printf("Error: No file found\n");
+        return 0;
+    }
     fgets(line, 999, p);
-
     while (!feof(p)) {
         errCode = parse(line);
         if (errCode != 0) {
             return errCode;
         }
-        fgets(line, 999, 0);
+        fgets(line, 999, p);
     }
-    return errCode;
-}
 
-
-void help() {
-    printf("COMMAND\tDESCRIPTION\n"
-                   "help\tDisplays all the commands\n"
-                   "quit\tExits / terminates the shell with \"Bye\"\n"
-                   "set VAR STRING\tAssigns a value to shell memory\n"
-                   "print VAR\t\"Prints the STRING assigned to VA\"\n"
-                   "run SCRIPT.TXT\tExecutes the file SCRIPT.txt\n"
-    );
-}
-
-
-int run(char script[]) {
     return 0;
 }
 
+
 int quit() {
-    printf("Bye");
+    printf("Bye!\n");
     return -1;
 }
 
@@ -46,9 +48,7 @@ int quit() {
 int interpreter(char *words[]) {
     int errCode = 0;
 
-    if (*(words[0]) == '.' && *(words[0] + 1) == '/') {
-        errCode = script(words);
-    } else if (strcmp(words[0], "help") == 0) {
+    if (strcmp(words[0], "help") == 0) {
         help();
     } else if (strcmp(words[0], "quit") == 0) {
         errCode = quit();
@@ -60,7 +60,7 @@ int interpreter(char *words[]) {
     } else if (strcmp(words[0], "run") == 0) {
         errCode = run(words[1]);
     } else {
-        printf("Command not found or too many arguments");
+        printf("Command not found or too many arguments\n");
     }
 
     return errCode;

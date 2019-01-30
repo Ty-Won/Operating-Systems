@@ -4,6 +4,6 @@
 
 #ifndef ASSIGNMENT_1_SHELLMEMORY_H
 #define ASSIGNMENT_1_SHELLMEMORY_H
-void set(char var[], char val[]);
 void print_var(char var[]);
+void set(char var[], char val[]);
 #endif //ASSIGNMENT_1_SHELLMEMORY_H

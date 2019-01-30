@@ -1,4 +1,5 @@
 #include <malloc.h>
+#include <memory.h>
 
 typedef struct shellmemory {
     char *variable;
@@ -9,6 +10,11 @@ typedef struct shellmemory {
 SHELLMEMORY *head;
 
 void set(char var[], char val[]) {
+    if(val == NULL){
+        printf("Did not set variable: Error\n");
+        return;
+    }
+
     if (head == NULL) {
         head = malloc(sizeof(SHELLMEMORY));
         head->value = val;
@@ -21,7 +27,11 @@ void set(char var[], char val[]) {
         newNode->value = val;
         newNode->next = NULL;
         while(temp!= NULL){
-            if(temp->next==NULL){
+            if(strcmp((temp->variable), var)==0 ){
+                temp->value=val;
+                break;
+            }
+            else if(temp->next==NULL){
                 temp->next=newNode;
                 break;
             }
@@ -37,8 +47,13 @@ void set(char var[], char val[]) {
 
 void print_var(char var[]) {
     SHELLMEMORY *temp = head;
+    if(var == NULL){
+        printf("Error no variables found\n");
+    }
+
     while (temp != NULL) {
-        if (*((char*)(temp->variable)) == *var) {
+
+        if(strcmp((temp->variable), var) == 0){
             printf("%s\n", temp->value);
             return;
         } else {
