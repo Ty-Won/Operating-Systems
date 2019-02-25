@@ -35,23 +35,23 @@ int parse(char userInput[])
 }
 
 
-int main(int argc, char *argv[])
-{
-    char prompt[100] = {'$', '\0'};
-    char userInput[1000];
-    int errorCode = 0;
+// int main(int argc, char *argv[])
+// {
+//     char prompt[100] = {'$', '\0'};
+//     char userInput[1000];
+//     int errorCode = 0;
 
-    printf("Welcome to the Tyrone Shell! \nVersion 1.0 Created January 2019\n");
+//     printf("Welcome to the Tyrone Shell! \nVersion 1.0 Created January 2019\n");
 
-    while(1)
-    {
-        printf("%s", prompt);
-        fgets(userInput, 999, stdin);
-        printf("\b\b");
-        errorCode = parse(userInput);
+//     while(1)
+//     {
+//         printf("%s", prompt);
+//         fgets(userInput, 999, stdin);
+//         printf("\b\b");
+//         errorCode = parse(userInput);
 
-        if(errorCode ==-1){
-            exit(99);
-        }
-    }
-}
+//         if(errorCode ==-1){
+//             exit(99);
+//         }
+//     }
+// }

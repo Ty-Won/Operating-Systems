@@ -1,0 +1,7 @@
+set t1 inTestFile2
+print t1
+print t2
+print t3
+set t5 end
+print t6
+print t5

@@ -50,9 +50,9 @@ int interpreter(char *words[]) {
 
     if (strcmp(words[0], "help") == 0) {
         help();
-    } else if (strcmp(words[0], "quit") == 0) {
+    } else if (strcmp(words[0], "quit" ) == 0 ) {
         errCode = quit();
-    } else if (strcmp(words[0], "set") == 0) {
+    } else if (strcmp(words[0], "set" ) == 0) {
         set(words[1], words[2]);
 
     } else if (strcmp(words[0], "print") == 0) {
