@@ -44,7 +44,7 @@ int shell(int argc, char *argv[])
     char userInput[1000];
     int errorCode = 0;
 
-    printf("Welcome to the Tyrone Shell! \nVersion 1.0 Created January 2019\n");
+    printf("Welcome to the Tyrone Shell! \nVersion 2.0 Created February 2019\n");
 
     while(1)
     {

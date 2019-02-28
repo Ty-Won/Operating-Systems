@@ -10,7 +10,7 @@ typedef struct shellmemory {
 SHELLMEMORY *head_shell;
 
 void set(char var[], char val[]) {
-    if(val == NULL){
+    if(val == NULL || strcmp(val," ")==0 || strcmp(val,"")==0 || strcmp(val,"\n")==0){
         printf("Did not set variable: Error\n");
         return;
     }
@@ -41,7 +41,6 @@ void set(char var[], char val[]) {
         }
 
     }
-    printf("Variable Set\n");
 
 }
 
