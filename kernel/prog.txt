@@ -1,0 +1,6 @@
+set a hello
+set b world
+run script.txt
+print a
+print b
+

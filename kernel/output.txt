@@ -1,0 +1,70 @@
+Kernel 1.0 loaded!
+Welcome to the Li shell!
+Version 2.0 Updated February 2019
+$ Legal commands:
+help              display this help
+quit              exits the shell
+set VAR STRING    assign STRING to VAR
+print VAR         display contents of VAR
+run SCRIPT.TXT    interpret SCRIPT.TXT
+exec p1 p2 p3     Executes concurrent programs
+$ $ 100
+$ $ 999
+$ (null)
+$ Wrong number of set parameters
+$ Legal commands:
+help              display this help
+quit              exits the shell
+set VAR STRING    assign STRING to VAR
+print VAR         display contents of VAR
+run SCRIPT.TXT    interpret SCRIPT.TXT
+exec p1 p2 p3     Executes concurrent programs
+hello
+10
+20
+$ Legal commands:
+help              display this help
+quit              exits the shell
+set VAR STRING    assign STRING to VAR
+print VAR         display contents of VAR
+run SCRIPT.TXT    interpret SCRIPT.TXT
+exec p1 p2 p3     Executes concurrent programs
+hello
+10
+20
+hello
+world
+$ Error: Script prog.txt already loaded
+Legal commands:
+help              display this help
+quit              exits the shell
+set VAR STRING    assign STRING to VAR
+print VAR         display contents of VAR
+run SCRIPT.TXT    interpret SCRIPT.TXT
+exec p1 p2 p3     Executes concurrent programs
+hello
+10
+20
+hello
+thenthis(2)
+thenthis(3)
+world
+$ Script filename not found
+$ hithere
+Legal commands:
+help              display this help
+quit              exits the shell
+set VAR STRING    assign STRING to VAR
+print VAR         display contents of VAR
+run SCRIPT.TXT    interpret SCRIPT.TXT
+exec p1 p2 p3     Executes concurrent programs
+hello
+10
+20
+hello
+thenthis(2)
+thenthis(3)
+world
+prog3
+prog3.1
+$ Good bye.

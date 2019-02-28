@@ -1,0 +1,6 @@
+set x hithere
+print x
+set e prog3
+set f prog3.1
+print e
+print f

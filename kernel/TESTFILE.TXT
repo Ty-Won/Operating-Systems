@@ -1,0 +1,13 @@
+help
+set a 100
+print a
+set b 999
+print b
+print c
+set c
+run script.txt
+exec prog.txt
+exec prog.txt prog2.txt prog.txt
+exec prog1.txt
+exec prog.txt prog2.txt prog3.txt
+quit
