@@ -10,6 +10,7 @@ int parse(char userInput[])
 {
     char tmp[200];
     char *words[1000];
+    memset(words,NULL,999);
     int a, b;
     int w = 0;
 

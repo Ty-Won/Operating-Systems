@@ -65,7 +65,6 @@ void scheduler(){
                     memory_index++;
                 }
 
-                fclose(ram->memory[memory_index]);
                 ram->memory[memory_index] = NULL;
 
 
