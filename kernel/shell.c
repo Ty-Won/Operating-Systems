@@ -50,10 +50,16 @@ int shell(int argc, char *argv[])
     while(1)
     {
         printf("%s", prompt);
-        fgets(userInput, 999, stdin);
+        int pipeNull = fgets(userInput, 999, stdin);
         printf("\b\b");
 
-        errorCode = parse(userInput);
+        if(pipeNull == NULL){
+            errorCode=-1;
+        }
+        else{
+            errorCode = parse(userInput);
+        }
+
         if(errorCode ==-1){
             exit(99);
         }
